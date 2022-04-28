@@ -1,7 +1,10 @@
-import '../styles/globals.css'
+import WordsContextProvider from '../context/word-context';
+import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function Application({ Component, pageProps }) {
+  return (
+    <WordsContextProvider>
+      <Component {...pageProps} />
+    </WordsContextProvider>
+  );
 }
-
-export default MyApp
